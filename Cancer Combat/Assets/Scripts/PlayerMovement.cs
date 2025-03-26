@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,9 +16,13 @@ public class PlayerMovement : MonoBehaviour
 
     private float xRotation = 0f;
 
+    public GameObject loseTextObj;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        loseTextObj.gameObject.SetActive(false);
+
         rb = GetComponent<Rigidbody>();
 
         // Ensure the camera transform is assigned
@@ -57,8 +63,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
+        // Get the input movement vector
+        Vector3 movementInput = new Vector3(movementX, 0.0f, movementY).normalized;
+
+        // Get the camera's forward and right vectors (ignoring vertical component)
+        Vector3 cameraForward = cameraTransform.forward;
+        Vector3 cameraRight = cameraTransform.right;
+        cameraForward.y = 0f;
+        cameraRight.y = 0f;
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        // Calculate the desired movement direction in world space
+        Vector3 desiredMovementDirection = (cameraForward * movementInput.z) + (cameraRight * movementInput.x);
+
+        // Apply the force
+        rb.AddForce(desiredMovementDirection * speed);
     }
 
     private void Update()
@@ -69,11 +89,17 @@ public class PlayerMovement : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-        // Lock cursor again if mouse is clicked and not over UI
-        else if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            // Destroy the current object
+            Destroy(gameObject); 
+            // Update the winText to display "You Lose!"
+            loseTextObj.gameObject.SetActive(true);
+            loseTextObj.GetComponent<TextMeshProUGUI>().text = "You Lose!";
         }
     }
 }
