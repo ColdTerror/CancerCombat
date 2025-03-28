@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf879327174f49743826f7465c364946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1213356871036067960, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
+  maxHealth: 10
 --- !u!195 &4108488813210298370
 NavMeshAgent:
   m_ObjectHideFlags: 0

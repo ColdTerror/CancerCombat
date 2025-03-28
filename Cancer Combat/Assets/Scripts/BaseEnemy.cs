@@ -15,6 +15,16 @@ public class BaseEnemy : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         currentHealth = maxHealth;
+
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogError("Could not find player with tag 'Player'!");
+        }
     }
 
     // Update is called once per frame
