@@ -106,12 +106,13 @@ public class BossAI : MonoBehaviour
     {
         Debug.Log("Boss is jumping and slamming!");
         Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null)
+        Collider bossCollider = GetComponent<Collider>(); // Get the boss's collider
+
+        if (rb != null && bossCollider != null)
         {
             // Initial jump
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             yield return new WaitForSeconds(0.5f); // Wait for the boss to go up
-
             // Slam down (you might need more sophisticated logic for landing)
             rb.linearVelocity = Vector3.down * (jumpForce * 2f); // Example force down
             while (!IsGrounded()) // Implement a way to check if the boss is grounded
@@ -120,10 +121,15 @@ public class BossAI : MonoBehaviour
             }
             rb.linearVelocity = Vector3.zero;
 
+
+            Debug.Log("Hello");
             // Create shockwave
             if (shockwaveEffectPrefab != null)
             {
-                Instantiate(shockwaveEffectPrefab, transform.position, Quaternion.identity);
+                Debug.Log("Shockwave effect instantiated!");
+                Vector3 spawnPosition = bossCollider.bounds.min; // Get the bottom-most point of the collider
+                GameObject shockwaveInstance = Instantiate(shockwaveEffectPrefab, spawnPosition, Quaternion.identity);
+                shockwaveInstance.transform.Rotate(-90f, 0f, 0f);
             }
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, slamRadius, shockwaveTargetLayer);
             foreach (Collider hitCollider in hitColliders)
@@ -144,15 +150,21 @@ public class BossAI : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Boss needs a Rigidbody for the Jump Slam attack.");
+            Debug.LogError("Boss needs a Rigidbody/Collider for the Jump Slam attack.");
         }
     }
 
     bool IsGrounded()
     {
-        // Implement a check to see if the boss is touching the ground
-        // This could involve a raycast down from the boss's feet
-        return Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, 0.2f);
+
+        Collider bossCollider = GetComponent<Collider>();
+        if (bossCollider == null) return false; // No collider, can't be grounded
+
+        float raycastDistance = 0.3f; // Adjust this as needed
+        Vector3 raycastOrigin = bossCollider.bounds.min + Vector3.up * 0.1f; // Start slightly above the bottom
+
+
+        return Physics.Raycast(raycastOrigin, Vector3.down, raycastDistance);
     }
 
     // Attack 3: Charge

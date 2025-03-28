@@ -141,8 +141,8 @@ MonoBehaviour:
   shockwaveForce: 5
   shockwaveTargetLayer:
     serializedVersion: 2
-    m_Bits: 0
-  shockwaveEffectPrefab: {fileID: 0}
+    m_Bits: 8
+  shockwaveEffectPrefab: {fileID: 2531111320078347876, guid: 9d5da0be8fb8d1c47b1a8f2c0ed11742, type: 3}
   chargeSpeed: 15
   chargeDuration: 2
   maxHealth: 30

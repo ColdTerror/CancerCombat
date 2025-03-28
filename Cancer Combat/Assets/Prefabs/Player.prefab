@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7006331546755573732}
   - component: {fileID: 5793037651378089536}
   - component: {fileID: 3364287421705227808}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 7464246314237027574}
   - component: {fileID: 4525505518593398753}
   - component: {fileID: 1528099191289383450}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirstPersonCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 4393236712960769377}
   - component: {fileID: 5445616718764301264}
   - component: {fileID: 1642243282025911009}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
