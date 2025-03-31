@@ -31,18 +31,24 @@ public class Bullet : MonoBehaviour
         // Check if the collided object has the "Enemy" tag
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Try to get the EnemyHealth component
-            BaseEnemy BaseEnemy = collision.gameObject.GetComponent<BaseEnemy>();
 
-            if (BaseEnemy != null)
+            BaseEnemy baseEnemy = collision.gameObject.GetComponent<BaseEnemy>();
+            BossAI bossAI = collision.gameObject.GetComponent<BossAI>();
+
+            if (baseEnemy != null)
             {
-                // If the enemy has a script, deal damage
-                BaseEnemy.TakeDamage(damageAmount);
+                // If it's a BaseEnemy, deal damage
+                baseEnemy.TakeDamage(damageAmount);
+            }
+            else if (bossAI != null)
+            {
+                // If it's the BossAI, deal damage
+                bossAI.TakeDamage(damageAmount);
             }
             else
             {
-                Debug.LogWarning("Enemy hit but has no script: " + collision.gameObject.name);
-                //destroy the enemy if no health script is found
+                Debug.LogWarning("Enemy hit but has no health script (BaseEnemy or BossAI): " + collision.gameObject.name);
+                // Optionally destroy the enemy if no health script is found
                 Destroy(collision.gameObject);
             }
 

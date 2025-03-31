@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -16,12 +15,11 @@ public class PlayerMovement : MonoBehaviour
 
     private float xRotation = 0f;
 
-    public GameObject loseTextObj;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        loseTextObj.gameObject.SetActive(false);
+        
 
         rb = GetComponent<Rigidbody>();
 
@@ -91,15 +89,5 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            // Destroy the current object
-            Destroy(gameObject); 
-            // Update the winText to display "You Lose!"
-            loseTextObj.gameObject.SetActive(true);
-            loseTextObj.GetComponent<TextMeshProUGUI>().text = "You Lose!";
-        }
-    }
+
 }

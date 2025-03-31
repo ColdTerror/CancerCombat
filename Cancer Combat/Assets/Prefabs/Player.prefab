@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 4393236712960769377}
   - component: {fileID: 5445616718764301264}
   - component: {fileID: 1642243282025911009}
+  - component: {fileID: 6597424859759136446}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -451,3 +452,15 @@ MonoBehaviour:
   weaponMuzzle: {fileID: 7886491674418853519}
   fireRate: 0.2
   bulletSpawnOffset: 1
+--- !u!114 &6597424859759136446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7336675435556894456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15211a1152f096845b6cfb87d2147c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

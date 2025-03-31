@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5895095709962774884}
   m_Layer: 0
   m_Name: BossEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,12 +139,15 @@ MonoBehaviour:
   jumpForce: 10
   slamRadius: 5
   shockwaveForce: 5
+  slamDamage: 10
   shockwaveTargetLayer:
     serializedVersion: 2
     m_Bits: 8
   shockwaveEffectPrefab: {fileID: 2531111320078347876, guid: 9d5da0be8fb8d1c47b1a8f2c0ed11742, type: 3}
   chargeSpeed: 15
   chargeDuration: 2
+  chargeForce: 20
+  chargeDamage: 10
   maxHealth: 30
 --- !u!54 &5895095709962774884
 Rigidbody:

@@ -16,18 +16,21 @@ public class BossAI : MonoBehaviour
     // Attack 2: Jump and Slam
     public float jumpForce = 10f;
     public float slamRadius = 5f;
-    public float shockwaveForce = 5f;
+    public float shockwaveForce = 10f;
+    public float slamDamage = 10; // Damage dealt to the player on slam
     public LayerMask shockwaveTargetLayer; // Layers that the shockwave affects
     public GameObject shockwaveEffectPrefab; // Visual effect for the shockwave
 
     // Attack 3: Charge
     public float chargeSpeed = 15f;
     public float chargeDuration = 2f;
+    public float chargeForce = 5f; // Force applied to the player upon collision
+    public float chargeDamage = 10; // Damage dealt to the player on charge
     private bool isCharging = false;
     private Vector3 chargeTargetPosition;
 
     // Boss Health 
-    public int maxHealth = 30;
+    public int maxHealth = 100;
     private int currentHealth;
 
     void Start()
@@ -113,16 +116,15 @@ public class BossAI : MonoBehaviour
             // Initial jump
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             yield return new WaitForSeconds(0.5f); // Wait for the boss to go up
-            // Slam down (you might need more sophisticated logic for landing)
-            rb.linearVelocity = Vector3.down * (jumpForce * 2f); // Example force down
-            while (!IsGrounded()) // Implement a way to check if the boss is grounded
+
+            rb.linearVelocity = Vector3.down * (jumpForce * 2f); //slam downwards by setting a downward velocity
+            while (!IsGrounded()) // wait till the boss is grounded
             {
                 yield return null;
             }
             rb.linearVelocity = Vector3.zero;
 
 
-            Debug.Log("Hello");
             // Create shockwave
             if (shockwaveEffectPrefab != null)
             {
@@ -130,10 +132,25 @@ public class BossAI : MonoBehaviour
                 Vector3 spawnPosition = bossCollider.bounds.min; // Get the bottom-most point of the collider
                 GameObject shockwaveInstance = Instantiate(shockwaveEffectPrefab, spawnPosition, Quaternion.identity);
                 shockwaveInstance.transform.Rotate(-90f, 0f, 0f);
+
+                // Get the Particle System component
+                ParticleSystem ps = shockwaveInstance.GetComponent<ParticleSystem>();
+                if (ps != null)
+                {
+                    // Access the Shape module
+                    var shape = ps.shape;
+                    // Set the radius to match the slamRadius
+                    shape.radius = slamRadius;
+                }
+                else
+                {
+                    Debug.LogWarning("Shockwave effect prefab does not have a Particle System component.");
+                }
             }
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, slamRadius, shockwaveTargetLayer);
             foreach (Collider hitCollider in hitColliders)
             {
+                Debug.Log("Hit object: " + hitCollider.name); // For debugging purposes
                 // Apply force or damage to hit objects (e.g., the player)
                 if (hitCollider.CompareTag("Player"))
                 {
@@ -143,8 +160,7 @@ public class BossAI : MonoBehaviour
                     {
                         hitCollider.GetComponent<Rigidbody>().AddForce(direction * shockwaveForce, ForceMode.Impulse);
                     }
-                    // Or apply damage using a PlayerHealth script
-                    // hitCollider.GetComponent<PlayerHealth>().TakeDamage(10);
+                    hitCollider.GetComponent<PlayerManager>().TakeDamage(slamDamage);
                 }
             }
         }
@@ -189,11 +205,14 @@ public class BossAI : MonoBehaviour
             Vector3 direction = (chargeTargetPosition - transform.position).normalized; // Keep the original direction for movement
             Rigidbody rb = GetComponent<Rigidbody>();
 
+
+
+
             if (distanceXZ > 1.5f) // Check horizontal distance
             {
                 rb.linearVelocity = direction * chargeSpeed;
             }
-            else
+            else //end of charge
             {
                 
                 rb.linearVelocity = Vector3.zero;
@@ -209,6 +228,46 @@ public class BossAI : MonoBehaviour
             {
                 rb.linearVelocity = Vector3.zero;
             }
+            nextAttackTime = Time.time + attackCooldown;
+        }
+    }
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (isCharging && collision.gameObject.CompareTag("Player"))
+        {
+            // Get the PlayerManager component from the player
+            PlayerManager playerManager = collision.gameObject.GetComponent<PlayerManager>();
+            Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
+
+            if (playerManager != null)
+            {
+                // Deal damage to the player
+                playerManager.TakeDamage(chargeDamage);
+            }
+            else
+            {
+                Debug.LogWarning("Player hit by charge but has no PlayerManager script!");
+            }
+
+            if (playerRb != null)
+            {
+                // Calculate the direction to knock the player back
+                Vector3 knockbackDirection = (collision.transform.position - transform.position).normalized;
+                // Apply an upward component to make them fly back and up a bit
+                knockbackDirection.y = 0.5f; // Adjust this value for the vertical lift
+                playerRb.AddForce(knockbackDirection * chargeForce, ForceMode.Impulse);
+            }
+            else
+            {
+                Debug.LogWarning("Player hit by charge but has no Rigidbody for knockback!");
+            }
+
+            // Stop the charge after hitting the player
+            isCharging = false;
+            Rigidbody bossRb = GetComponent<Rigidbody>();
+            if (bossRb != null) bossRb.linearVelocity = Vector3.zero;
             nextAttackTime = Time.time + attackCooldown;
         }
     }
