@@ -270,6 +270,20 @@ public class BossAI : MonoBehaviour
             if (bossRb != null) bossRb.linearVelocity = Vector3.zero;
             nextAttackTime = Time.time + attackCooldown;
         }
+        // Check for obstacle collision during charge (using Tag)
+        else if (isCharging && collision.gameObject.CompareTag("Obstacle"))
+        {
+            StopChargeOnObstacleHit();
+        }
+    }
+
+    void StopChargeOnObstacleHit()
+    {
+        Debug.Log("Boss hit an obstacle while charging!");
+        isCharging = false;
+        Rigidbody bossRb = GetComponent<Rigidbody>();
+        if (bossRb != null) bossRb.linearVelocity = Vector3.zero;
+        nextAttackTime = Time.time + attackCooldown;
     }
 
     // Boss takes damage (call this from your bullet script)
