@@ -18,7 +18,7 @@ public class PlayerShooting : MonoBehaviour
     void Update()
     {
         // Handle shooting input (e.g., left mouse button)
-        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+        if (Time.timeScale > 0 && Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
