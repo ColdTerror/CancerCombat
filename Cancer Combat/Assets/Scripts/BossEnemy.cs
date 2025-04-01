@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; // For lists
+using System.Collections.Generic;
+using TMPro;
 
 public class BossAI : MonoBehaviour
 {
@@ -33,6 +34,12 @@ public class BossAI : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
+
+    //UI
+
+    public GameObject textObj;
+    public GameObject winButton;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -46,6 +53,9 @@ public class BossAI : MonoBehaviour
         {
             Debug.LogError("Could not find player with tag 'Player'!");
         }
+
+        textObj.gameObject.SetActive(false);
+        winButton.gameObject.SetActive(false);
     }
 
     void Update()
@@ -297,7 +307,15 @@ public class BossAI : MonoBehaviour
     void Die()
     {
         Debug.Log("Boss has been defeated!");
-        // Add death effects, animations, etc.
         Destroy(gameObject);
+
+        // Pause the game by setting Time.timeScale to 0
+        Time.timeScale = 0f;
+
+        textObj.gameObject.SetActive(true);
+        textObj.GetComponent<TextMeshProUGUI>().text = "You Win!";
+
+        winButton.gameObject.SetActive(true);
+
     }
 }

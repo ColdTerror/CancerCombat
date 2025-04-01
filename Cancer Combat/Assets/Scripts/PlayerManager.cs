@@ -8,13 +8,15 @@ public class PlayerManager : MonoBehaviour
     public float maxHealth = 50; // Maximum health of the player
     private float currentHealth; // Current health of the player
 
-    public GameObject loseTextObj; // Reference to the lose text object in the UI
+    public GameObject textObj; // Reference to the lose text object in the UI
+    public GameObject winButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = maxHealth; // Initialize the player's health to maximum at the start of the game
-        loseTextObj.gameObject.SetActive(false);
+        textObj.gameObject.SetActive(false);
+        winButton.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,8 +51,10 @@ public class PlayerManager : MonoBehaviour
         if (isDead) return; // Only die once
 
         Debug.Log("player has died"); // Log message when player dies
-        loseTextObj.gameObject.SetActive(true);
-        loseTextObj.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+        textObj.gameObject.SetActive(true);
+        textObj.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+        winButton.gameObject.SetActive(true);
+
         isDead = true;
 
         // Pause the game by setting Time.timeScale to 0
