@@ -1,0 +1,103 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq; // For LINQ operations like Count()
+
+public class Level2WaveManager : MonoBehaviour
+{
+    public GameObject[] waveContainers; // Assign the empty children (wave containers) in the Inspector
+    private int currentWaveIndex = 0;
+    private bool canSpawnNextWave = false;
+    private bool waveActive = false;
+    private List<GameObject> activeEnemies = new List<GameObject>();
+
+    
+    void Start()
+    {
+        canSpawnNextWave = true;
+
+        // Ensure wave containers are assigned
+        if (waveContainers == null || waveContainers.Length == 0)
+        {
+            Debug.LogError("Wave Containers not assigned in the WaveManager!");
+            enabled = false;
+            return;
+        }
+
+        // Deactivate all wave containers initially
+        foreach (var container in waveContainers)
+        {
+            if (container != null)
+            {
+                container.SetActive(false);
+            }
+        }
+
+
+    }
+
+    void Update()
+    {
+        if (waveActive)
+        {
+            // Check if all active enemies are defeated
+            activeEnemies.RemoveAll(enemy => enemy == null); // Remove destroyed enemies
+            if (activeEnemies.Count == 0)
+            {
+                waveActive = false;
+                Debug.Log("Wave " + (currentWaveIndex + 1) + " completed!");
+
+                // Move to the next wave if available
+                currentWaveIndex++;
+                if (currentWaveIndex < waveContainers.Length)
+                {
+                    canSpawnNextWave = true;
+                    //SpawnNextWave();
+                }
+                else
+                {
+                    Debug.Log("All waves completed for this level!");
+                    // Handle level completion logic here
+                }
+            }
+        }
+        else if (canSpawnNextWave && Input.GetKeyDown(KeyCode.RightAlt)) // Example: Trigger next wave with spacebar
+        {
+            SpawnNextWave();
+        }
+    }
+
+
+    void SpawnNextWave()
+    {
+        if (currentWaveIndex < waveContainers.Length && canSpawnNextWave)
+        {
+            canSpawnNextWave = false;
+            waveActive = true;
+
+            GameObject currentWaveContainer = waveContainers[currentWaveIndex];
+            if (currentWaveContainer != null)
+            {
+                currentWaveContainer.SetActive(true);
+                Debug.Log("Spawning Wave " + (currentWaveIndex + 1));
+
+                // Get all direct children (enemies) of the wave container
+                foreach (Transform enemyTransform in currentWaveContainer.transform)
+                {
+                    GameObject enemy = enemyTransform.gameObject;
+                    if (enemy != null && !activeEnemies.Contains(enemy))
+                    {
+                        activeEnemies.Add(enemy);
+                        // Optionally, you could enable the enemy here if it starts disabled
+                        // enemy.SetActive(true);
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("Wave Container at index " + currentWaveIndex + " is null!");
+            }
+        }
+    }
+
+}
