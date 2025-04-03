@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a353c804524cf1f4794228707b06ef79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSceneName: Testing
+  startSceneName: StoryStep1
   optionsSceneName: Options
   creditsSceneName: Credits
 --- !u!4 &1004068573

@@ -1,0 +1,57 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+public class NextStoryStep : MonoBehaviour
+{
+    [Header("Scene Names")]
+    public string Step1SceneName = "StoryStep1";
+    public string Step2SceneName = "StoryStep1"; 
+    public string Step3SceneName = "Level 1";
+    public string Step4SceneName = "StoryStep4";
+    public string Step5SceneName = "Level 2";
+    public string Step6SceneName = "Level 3";
+    public string Step7SceneName = "StoryStep7";     
+    public string MainMenu = "MainMenu";  
+
+    public void Step1()
+    {
+        Debug.Log("Loading Step 1");
+        SceneManager.LoadScene(Step1SceneName);
+    }
+    public void Step2()
+    {
+        Debug.Log("Loading Step 2");
+        SceneManager.LoadScene(Step2SceneName);
+    }
+    public void Step3()
+    {
+        Debug.Log("Loading Step 3");
+        SceneManager.LoadScene(Step3SceneName);
+    }
+    public void Step4()
+    {
+        Debug.Log("Loading Step 4");
+        SceneManager.LoadScene(Step4SceneName);
+    }
+    public void Step5()
+    {
+        Debug.Log("Loading Step 5");
+        SceneManager.LoadScene(Step5SceneName);
+    }
+    public void Step6()
+    {
+        Debug.Log("Loading Step 6");
+        SceneManager.LoadScene(Step6SceneName);
+    }
+    public void Step7()
+    {
+        Debug.Log("Loading Step 7");
+        SceneManager.LoadScene(Step7SceneName);
+    }
+
+    public void EndGame(){
+        Debug.Log("Ending Game");
+        SceneManager.LoadScene(MainMenu);
+    }
+}

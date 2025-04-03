@@ -8,6 +8,8 @@ public class MainMenuManager : MonoBehaviour
     public string optionsSceneName = "Options"; 
     public string creditsSceneName = "Credits"; 
 
+    
+
     public void StartGame()
     {
         Debug.Log("Starting Game...");
