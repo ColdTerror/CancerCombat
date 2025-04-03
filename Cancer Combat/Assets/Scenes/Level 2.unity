@@ -2302,6 +2302,8 @@ GameObject:
   - component: {fileID: 977465347}
   - component: {fileID: 977465346}
   - component: {fileID: 977465345}
+  - component: {fileID: 977465348}
+  - component: {fileID: 977465349}
   m_Layer: 0
   m_Name: Exit Valve
   m_TagString: Untagged
@@ -2400,6 +2402,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977465343}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &977465348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977465343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa149cdde3805ab46a7074fe66f02aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveManager: {fileID: 1703101907}
+--- !u!136 &977465349
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977465343}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000003
+  m_Height: 2.0000005
+  m_Direction: 1
+  m_Center: {x: 0.00000029802322, y: -0.00000023841858, z: -0.00000014901164}
 --- !u!1001 &1024208689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3705,6 +3743,8 @@ MonoBehaviour:
   - {fileID: 467478434}
   - {fileID: 531023533}
   - {fileID: 449004241}
+  pipeToNextScene: {fileID: 977465343}
+  nextSceneName: Level 3
 --- !u!4 &1703101908
 Transform:
   m_ObjectHideFlags: 0

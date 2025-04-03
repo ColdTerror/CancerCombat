@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq; // For LINQ operations like Count()
+using System.Linq; 
+using UnityEngine.SceneManagement;
 
 public class Level2WaveManager : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class Level2WaveManager : MonoBehaviour
     private bool waveActive = false;
     private List<GameObject> activeEnemies = new List<GameObject>();
 
-    
+    private bool allEnemiesDefeated = true; // Flag to check if all enemies are defeated
+    public GameObject pipeToNextScene; //if player walks into this after all enemies defeated, load next scene
+    public string nextSceneName;
+
     void Start()
     {
         canSpawnNextWave = true;
@@ -31,6 +35,11 @@ public class Level2WaveManager : MonoBehaviour
             {
                 container.SetActive(false);
             }
+        }
+
+        if (pipeToNextScene == null)
+        {
+             Debug.LogWarning("Pipe to Next Scene not assigned in WaveManager!");
         }
 
 
@@ -57,6 +66,7 @@ public class Level2WaveManager : MonoBehaviour
                 else
                 {
                     Debug.Log("All waves completed for this level!");
+                    allEnemiesDefeated = true;
                     // Handle level completion logic here
                 }
             }
@@ -88,8 +98,6 @@ public class Level2WaveManager : MonoBehaviour
                     if (enemy != null && !activeEnemies.Contains(enemy))
                     {
                         activeEnemies.Add(enemy);
-                        // Optionally, you could enable the enemy here if it starts disabled
-                        // enemy.SetActive(true);
                     }
                 }
             }
@@ -98,6 +106,19 @@ public class Level2WaveManager : MonoBehaviour
                 Debug.LogError("Wave Container at index " + currentWaveIndex + " is null!");
             }
         }
+    }
+
+    public void LoadNextScene()
+    {
+        if (!allEnemiesDefeated)
+        {
+            Debug.LogWarning("Cannot load next scene. All enemies are not defeated yet.");
+            return;
+        }
+        else{
+            SceneManager.LoadScene(nextSceneName);
+        }
+        
     }
 
 }
