@@ -12,7 +12,7 @@ public class Level2WaveManager : MonoBehaviour
     private bool waveActive = false;
     private List<GameObject> activeEnemies = new List<GameObject>();
 
-    private bool allEnemiesDefeated = true; // Flag to check if all enemies are defeated
+    private bool allEnemiesDefeated = false; // Flag to check if all enemies are defeated
     public GameObject pipeToNextScene; //if player walks into this after all enemies defeated, load next scene
     public string nextSceneName;
 

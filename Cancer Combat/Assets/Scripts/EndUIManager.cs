@@ -5,10 +5,11 @@ public class EndUIManager : MonoBehaviour
 {
     [Header("Scene Names")]
     public string MainMenuName = "MainMenu"; 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     public void GoToMenu()
     {
         Debug.Log("Back to Menu");
         SceneManager.LoadScene(MainMenuName);
+        Time.timeScale = 1f; // Resume the game time
     }
 }
