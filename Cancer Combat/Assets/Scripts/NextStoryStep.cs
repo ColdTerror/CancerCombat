@@ -16,42 +16,56 @@ public class NextStoryStep : MonoBehaviour
 
     public void Step1()
     {
+        unlockCursor();
         Debug.Log("Loading Step 1");
         SceneManager.LoadScene(Step1SceneName);
     }
     public void Step2()
     {
+        unlockCursor();
         Debug.Log("Loading Step 2");
         SceneManager.LoadScene(Step2SceneName);
     }
     public void Step3()
     {
+        unlockCursor();
         Debug.Log("Loading Step 3");
         SceneManager.LoadScene(Step3SceneName);
     }
     public void Step4()
     {
+        unlockCursor();
         Debug.Log("Loading Step 4");
         SceneManager.LoadScene(Step4SceneName);
     }
     public void Step5()
     {
+        unlockCursor();
         Debug.Log("Loading Step 5");
         SceneManager.LoadScene(Step5SceneName);
     }
     public void Step6()
     {
+        unlockCursor();
         Debug.Log("Loading Step 6");
         SceneManager.LoadScene(Step6SceneName);
     }
     public void Step7()
     {
+        unlockCursor();
         Debug.Log("Loading Step 7");
         SceneManager.LoadScene(Step7SceneName);
     }
 
     public void EndGame(){
+        unlockCursor();
         Debug.Log("Ending Game");
         SceneManager.LoadScene(MainMenu);
+    }
+
+    public void unlockCursor(){
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
     }
 }

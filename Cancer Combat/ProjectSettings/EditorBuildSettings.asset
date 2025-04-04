@@ -5,18 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 36865353388bc9741a432db99afb6165
-  - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: b44463a14a3dafc4e86e323491be1f69
-  - enabled: 1
-    path: Assets/Scenes/Testing.unity
-    guid: 712551d8ce4d4f841b4c3e405d130de6
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: d5f7a69c77eaf8745ae762927dd5d975
@@ -27,20 +18,26 @@ EditorBuildSettings:
     path: Assets/Scenes/StoryStep1.unity
     guid: eeb1344b31a6a474abe8b520f0f11aed
   - enabled: 1
+    path: Assets/Scenes/StoryStep2.unity
+    guid: e88965a5b11ad1541a7a56d8978ee9f2
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: b44463a14a3dafc4e86e323491be1f69
+  - enabled: 1
+    path: Assets/Scenes/StoryStep4.unity
+    guid: 0cbd885803145a742be7d5b0a19dc5e4
+  - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: cbdda5f68cade39429bbb3562590086d
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: dc3a091715a2b4942b96267f4dae76ac
   - enabled: 1
-    path: Assets/Scenes/StoryStep2.unity
-    guid: e88965a5b11ad1541a7a56d8978ee9f2
-  - enabled: 1
-    path: Assets/Scenes/StoryStep4.unity
-    guid: 0cbd885803145a742be7d5b0a19dc5e4
-  - enabled: 1
     path: Assets/Scenes/StoryStep7.unity
     guid: b53e40c6605ce434a8c363aaafb88d61
+  - enabled: 1
+    path: Assets/Scenes/Testing.unity
+    guid: 712551d8ce4d4f841b4c3e405d130de6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -48,6 +48,8 @@ public class Level1EnemyManager : MonoBehaviour
 
     IEnumerator LoadNextSceneWithDelay()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         yield return new WaitForSeconds(delayBeforeNextScene);
         SceneManager.LoadScene(nextSceneName);
     }

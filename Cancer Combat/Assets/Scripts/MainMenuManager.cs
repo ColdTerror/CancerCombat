@@ -12,6 +12,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Debug.Log("Starting Game...");
         SceneManager.LoadScene(startSceneName);
     }

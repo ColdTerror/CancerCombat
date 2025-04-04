@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Level2WaveManager : MonoBehaviour
 {
-    public GameObject[] waveContainers; // Assign the empty children (wave containers) in the Inspector
+    public GameObject[] waveContainers; 
     private int currentWaveIndex = 0;
     private bool canSpawnNextWave = false;
     private bool waveActive = false;
@@ -61,17 +61,16 @@ public class Level2WaveManager : MonoBehaviour
                 if (currentWaveIndex < waveContainers.Length)
                 {
                     canSpawnNextWave = true;
-                    //SpawnNextWave();
+                    SpawnNextWave();
                 }
                 else
                 {
                     Debug.Log("All waves completed for this level!");
                     allEnemiesDefeated = true;
-                    // Handle level completion logic here
                 }
             }
         }
-        else if (canSpawnNextWave && Input.GetKeyDown(KeyCode.RightAlt)) // Example: Trigger next wave with spacebar
+        else if (canSpawnNextWave) 
         {
             SpawnNextWave();
         }

@@ -9,6 +9,7 @@ public class EndUIManager : MonoBehaviour
     public void GoToMenu()
     {
         Debug.Log("Back to Menu");
+        
         SceneManager.LoadScene(MainMenuName);
         Time.timeScale = 1f; // Resume the game time
     }
