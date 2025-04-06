@@ -316,6 +316,7 @@ public class BossAI : MonoBehaviour
         textObj.GetComponent<TextMeshProUGUI>().text = "You Win!";
 
         winButton.gameObject.SetActive(true);
+        
 
     }
 }

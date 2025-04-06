@@ -67,6 +67,8 @@ public class Level2WaveManager : MonoBehaviour
                 {
                     Debug.Log("All waves completed for this level!");
                     allEnemiesDefeated = true;
+                    StartCoroutine(LoadNextSceneWithDelay());
+
                 }
             }
         }
@@ -118,6 +120,16 @@ public class Level2WaveManager : MonoBehaviour
             SceneManager.LoadScene(nextSceneName);
         }
         
+    }
+
+    IEnumerator LoadNextSceneWithDelay()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        Debug.Log("Loading next scene, onto the brain to finish the game");
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene(nextSceneName);
     }
 
 }

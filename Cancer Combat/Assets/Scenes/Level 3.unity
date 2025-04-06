@@ -418,7 +418,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74094381}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fae97dd5c48c700449b7001dc8eeda92, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1152,7 +1152,7 @@ PrefabInstance:
       objectReference: {fileID: 6813612720574740792}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: maxHealth
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: winButton
@@ -3212,7 +3212,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959925931}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fae97dd5c48c700449b7001dc8eeda92, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

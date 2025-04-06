@@ -121,7 +121,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4077944184599531608}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -154,6 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1213356871036067960, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
   maxHealth: 10
+  damage: 5
+  pushForce: 5
 --- !u!195 &4108488813210298370
 NavMeshAgent:
   m_ObjectHideFlags: 0

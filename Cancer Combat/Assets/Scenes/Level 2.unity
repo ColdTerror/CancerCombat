@@ -1906,7 +1906,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762983190}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fae97dd5c48c700449b7001dc8eeda92, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3163,6 +3163,10 @@ PrefabInstance:
       propertyPath: textObj
       value: 
       objectReference: {fileID: 1297214405}
+    - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7336675435556894456, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3938,7 +3942,7 @@ MonoBehaviour:
   - {fileID: 531023533}
   - {fileID: 449004241}
   pipeToNextScene: {fileID: 977465343}
-  nextSceneName: Level 3
+  nextSceneName: StoryStep6
 --- !u!4 &1703101908
 Transform:
   m_ObjectHideFlags: 0
