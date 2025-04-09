@@ -2,8 +2,10 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
-public class Dialogue : MonoBehaviour
+public class DialogueBox : MonoBehaviour
 {
+    private CanvasRenderer[] renderers;
+
     public GameObject textObj; // Reference to the text object in the UI
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI talkerNameText;
@@ -23,13 +25,18 @@ public class Dialogue : MonoBehaviour
         }
 
         textObj.SetActive(false); // Hide the dialogue initially
+        
+        renderers = GetComponentsInChildren<CanvasRenderer>();
+        HideDialogueBox(); // Hide on start if needed
 
-        StartDialog("Hello\nWorld\nBye!"); // Example text to start with
-        setTalkerName("Player"); // Example talker name
+        //StartDialog("Hello\nWorld\nBye!"); // Example text to start with
+        //setTalkerName("Player"); // Example talker name
     }
 
-    void StartDialog(string textToType)
+    public void StartDialog(string textToType)
     {
+        ShowDialogueBox();
+
         fullText = textToType;
         charIndex = 0;
 
@@ -54,10 +61,19 @@ public class Dialogue : MonoBehaviour
     IEnumerator TypeText()
     {
         isTyping = true;
-        while (charIndex < fullText.Length)
+        for (int i = 0; i < fullText.Length; i++)
         {
-            textComponent.text += fullText[charIndex];
-            charIndex++;
+            if (fullText[i] == '\\' && i + 1 < fullText.Length && fullText[i + 1] == 'n')
+            {
+                // Found a newline escape sequence, add the actual newline
+                textComponent.text += "\n";
+                i++; // Skip the 'n' character as it's already handled
+            }
+            else
+            {
+                // Regular character, append it
+                textComponent.text += fullText[i];
+            }
             yield return new WaitForSeconds(textDelay);
         }
         isTyping = false;
@@ -77,6 +93,22 @@ public class Dialogue : MonoBehaviour
     public void setTalkerName(string name)
     {
         talkerNameText.text = name;
+    }
+
+    public void ShowDialogueBox()
+    {
+        foreach (var renderer in renderers)
+        {
+            renderer.SetAlpha(1f);
+        }
+    }
+
+    public void HideDialogueBox()
+    {
+        foreach (var renderer in renderers)
+        {
+            renderer.SetAlpha(0f);
+        }
     }
 
 
