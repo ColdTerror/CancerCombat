@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float movementY;
 
     public float speed = 0;
-    public float mouseSensitivity = 50f; // Adjust this for camera sensitivity
+    public float mouseSensitivity = 10f; // Adjust this for camera sensitivity
     public Transform cameraTransform; // Drag your FirstPersonCamera here
     public float verticalRotationLimit = 80f; // Limit how far up/down you can look
 
@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
         // Get the input movement vector
         Vector3 movementInput = new Vector3(movementX, 0.0f, movementY).normalized;
 
@@ -78,11 +79,13 @@ public class PlayerMovement : MonoBehaviour
         cameraForward.Normalize();
         cameraRight.Normalize();
 
+
         // Calculate the desired movement direction in world space
         Vector3 desiredMovementDirection = (cameraForward * movementInput.z) + (cameraRight * movementInput.x);
 
         // Apply the force
         rb.AddForce(desiredMovementDirection * speed);
+        */
     }
 
     private void Update()
@@ -99,6 +102,21 @@ public class PlayerMovement : MonoBehaviour
             Cursor.visible = true;
 
         }
+
+        Vector3 movementInput = new Vector3(movementX, 0.0f, movementY).normalized;
+
+        Vector3 cameraForward = cameraTransform.forward;
+        Vector3 cameraRight = cameraTransform.right;
+        cameraForward.y = 0f;
+        cameraRight.y = 0f;
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        // Calculate the desired movement direction in world space
+        Vector3 desiredMovementDirection = (cameraForward * movementInput.z) + (cameraRight * movementInput.x);
+
+        // Apply the force
+        rb.AddForce(desiredMovementDirection * speed);
     }
 
 

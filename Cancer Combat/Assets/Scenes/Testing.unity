@@ -913,6 +913,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 1443796748}
+    - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: loseTextObj
       value: 
       objectReference: {fileID: 0}

@@ -466,6 +466,7 @@ MonoBehaviour:
   maxHealth: 50
   textObj: {fileID: 0}
   button: {fileID: 0}
+  DialogueBox: {fileID: 0}
   inDialogue: 0
   playerMovement: {fileID: 5445616718764301264}
   playerShooting: {fileID: 1642243282025911009}

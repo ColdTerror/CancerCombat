@@ -1,4 +1,4 @@
-using UnityEngine;
+      using UnityEngine;
 using TMPro;
 using System.Collections;
 
@@ -15,6 +15,14 @@ public class DialogueBox : MonoBehaviour
     private int charIndex = 0;
     private bool isTyping = false;
     private float targetFontSize;
+
+    private Coroutine typingCoroutine;
+
+    private bool isDialogueFinished = false;
+
+    public bool inDialogue = false; // Flag to check if the player is in dialogue
+
+
 
     void Start()
     {
@@ -33,12 +41,33 @@ public class DialogueBox : MonoBehaviour
         //setTalkerName("Player"); // Example talker name
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isTyping)
+            {
+                Debug.Log("Skip");
+                SkipText();
+            }
+            else if (isDialogueFinished)
+            {
+                Debug.Log("Stopping");
+                StopDialog();
+            }
+        }
+
+    }
+
     public void StartDialog(string textToType)
     {
+        inDialogue = true; // Set the inDialogue flag to true when starting a dialogue
+
         ShowDialogueBox();
 
         fullText = textToType;
         charIndex = 0;
+        isDialogueFinished = false;
 
         // 1. Temporarily set the full text to trigger auto-sizing
         textComponent.text = fullText;
@@ -55,8 +84,21 @@ public class DialogueBox : MonoBehaviour
         textObj.SetActive(true); // Show the Dialogue
 
         textComponent.text = ""; // Clear any previous text
-        StartCoroutine(TypeText());
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+        typingCoroutine = StartCoroutine(TypeText());
     }
+
+    public void StopDialog()
+    {
+        textObj.SetActive(false);
+        HideDialogueBox();
+        isDialogueFinished = false;
+        inDialogue = false;;
+    }
+
 
     IEnumerator TypeText()
     {
@@ -77,17 +119,25 @@ public class DialogueBox : MonoBehaviour
             yield return new WaitForSeconds(textDelay);
         }
         isTyping = false;
+        isDialogueFinished = true;
+
     }
 
     public void SkipText()
     {
         if (isTyping)
         {
-            StopCoroutine(TypeText());
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+                typingCoroutine = null;
+            }
             textComponent.text = fullText;
             isTyping = false;
+            isDialogueFinished = true; // Mark as finished
             charIndex = fullText.Length; // Mark as fully displayed
         }
+        
     }
 
     public void setTalkerName(string name)
