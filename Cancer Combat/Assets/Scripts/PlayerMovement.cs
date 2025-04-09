@@ -38,25 +38,31 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue movementValue)
     {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-        movementX = movementVector.x;
-        movementY = movementVector.y;
+        if (enabled){
+            // Get the input movement vector
+            Vector2 movementVector = movementValue.Get<Vector2>();
+            movementX = movementVector.x;
+            movementY = movementVector.y;
+        }
     }
 
     void OnLook(InputValue lookValue)
     {
-        Vector2 lookVector = lookValue.Get<Vector2>();
-        float mouseX = lookVector.x * mouseSensitivity * Time.deltaTime;
-        float mouseY = lookVector.y * mouseSensitivity * Time.deltaTime;
+        if (enabled){
+            // Get the mouse movement input
+            Vector2 lookVector = lookValue.Get<Vector2>();
+            float mouseX = lookVector.x * mouseSensitivity * Time.deltaTime;
+            float mouseY = lookVector.y * mouseSensitivity * Time.deltaTime;
 
-        // Rotate the player horizontally
-        transform.Rotate(Vector3.up * mouseX);
+            // Rotate the player horizontally
+            transform.Rotate(Vector3.up * mouseX);
 
-        // Rotate the camera vertically
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -verticalRotationLimit, verticalRotationLimit);
+            // Rotate the camera vertically
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -verticalRotationLimit, verticalRotationLimit);
 
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        }
     }
 
     private void FixedUpdate()

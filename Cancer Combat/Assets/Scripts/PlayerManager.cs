@@ -11,6 +11,10 @@ public class PlayerManager : MonoBehaviour
     public GameObject textObj; // Reference to the lose text object in the UI
     public GameObject button;
 
+    public bool inDialogue = false; // Flag to check if the player is in dialogue
+    public PlayerMovement playerMovement;
+    public PlayerShooting playerShooting;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +26,19 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(inDialogue);
+        if (inDialogue)
+        {
+            // Disable player movement when in dialogue
+            playerMovement.enabled = false;
+            playerShooting.enabled = false; // Disable shooting when in dialogue
+        }
+        else
+        {
+            // Enable player movement when not in dialogue
+            playerMovement.enabled = true;
+            playerShooting.enabled = true; // Enable shooting when not in dialogue
+        }
     }
 
     public float GetCurrentHealth()

@@ -13,13 +13,14 @@ public class NPCScript : MonoBehaviour
     public string interactionKey = "f"; // Key the player presses to interact
 
     private Transform playerTransform;
+    private PlayerManager playerManager; 
     private bool canInteract = false;
 
     void Start()
     {
         // Find the player's transform (you might need to adjust this based on your player setup)
         playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
-
+        playerManager = playerTransform?.GetComponent<PlayerManager>(); // Get the PlayerManager component from the player
         if (playerTransform == null)
         {
             Debug.LogError("Player not found in the scene. Make sure the player has the 'Player' tag.");
@@ -50,6 +51,7 @@ public class NPCScript : MonoBehaviour
             if (canInteract && Input.GetKeyDown(interactionKey))
             {
                 StartDialogue();
+                playerManager.inDialogue = true; // Set the player in dialogue state
             }
         }
     }
