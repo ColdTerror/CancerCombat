@@ -7,6 +7,7 @@ public class MainMenuManager : MonoBehaviour
     public string startSceneName = "Game"; 
     public string optionsSceneName = "Options"; 
     public string creditsSceneName = "Credits"; 
+    public string controlSceneName = "Controls";
 
     
 
@@ -30,14 +31,20 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene(creditsSceneName);
     }
 
+    public void OpenControls()
+    {
+        Debug.Log("Opening Controls Scene...");
+        SceneManager.LoadScene(controlSceneName);
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quitting Game...");
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 
 }
