@@ -9,6 +9,8 @@ public class PlayerShooting : MonoBehaviour
 
     public float bulletSpawnOffset = 0.1f; 
 
+    public GameObject muzzleFlashEffect; // Visual effect for the muzzleflash
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,8 +37,20 @@ public class PlayerShooting : MonoBehaviour
             // Instantiate the bullet at the offset position and rotation
             GameObject bulletInstance = Instantiate(bulletPrefab, spawnPosition, weaponMuzzle.rotation);
 
-            // Optionally, you could get the Bullet script component and set properties
-            // bulletInstance.GetComponent<Bullet>().damage = 10;
+
+            // Create shockwave
+            if (muzzleFlashEffect != null)
+            {
+                Debug.Log("muzzleFlashEffect effect instantiated!");
+                
+
+                GameObject muzzleFlashInstance = Instantiate(muzzleFlashEffect, spawnPosition, weaponMuzzle.rotation);
+                // Destroy the muzzle flash effect after a specified duration
+                Destroy(muzzleFlashInstance, .1f);
+                
+                // Get the Particle System component
+                //ParticleSystem ps = muzzleFlashInstance.GetComponent<ParticleSystem>();
+            }
         }
         else
         {

@@ -451,6 +451,7 @@ MonoBehaviour:
   weaponMuzzle: {fileID: 7886491674418853519}
   fireRate: 0.2
   bulletSpawnOffset: 1
+  muzzleFlashEffect: {fileID: 5699419133350322406, guid: b1b5db40aca6eaf4bbeb4351fbebc912, type: 3}
 --- !u!114 &6597424859759136446
 MonoBehaviour:
   m_ObjectHideFlags: 0
