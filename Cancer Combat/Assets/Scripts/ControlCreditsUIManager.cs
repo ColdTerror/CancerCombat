@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ControlUIManager : MonoBehaviour
+public class ControlCreditsUIManager : MonoBehaviour
 {
 
     [Header("Scene Names")]
