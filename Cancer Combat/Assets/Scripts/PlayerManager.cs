@@ -28,19 +28,22 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialogueBox.inDialogue)
-        {
-            
-            // Disable player movement when in dialogue
-            playerMovement.enabled = false;
-            playerShooting.enabled = false; // Disable shooting when in dialogue
+        if (DialogueBox == null){
+            if (DialogueBox.inDialogue)
+            {
+                
+                // Disable player movement when in dialogue
+                playerMovement.enabled = false;
+                playerShooting.enabled = false; // Disable shooting when in dialogue
+            }
+            else
+            {
+                // Enable player movement when not in dialogue
+                playerMovement.enabled = true;
+                playerShooting.enabled = true; // Enable shooting when not in dialogue
+            }
         }
-        else
-        {
-            // Enable player movement when not in dialogue
-            playerMovement.enabled = true;
-            playerShooting.enabled = true; // Enable shooting when not in dialogue
-        }
+        
     }
 
     public float GetCurrentHealth()
