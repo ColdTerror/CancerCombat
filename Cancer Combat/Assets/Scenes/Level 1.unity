@@ -339,6 +339,97 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42037186}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &156408053
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1059501469587316530, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_Name
+      value: CommanderBolt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537853838530794517, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: dialogueUI
+      value: 
+      objectReference: {fileID: 307399745}
+    - target: {fileID: 8537853838530794517, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: talkerName
+      value: Commander Bolt
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537853838530794517, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537853838530794517, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: Welcome to cancer combat! I'm  Commander Bolt, Your main objective is
+        to kill all the cancer cells. Be ready they are coming at you quick.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537853838530794517, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: Use your gun to shoot the cancer cells
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537853838530794517, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: After you're done come talk to me again
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537853838530794517, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: 'dialogueLines.Array.data[3]'
+      value: 'That''s a call from the main base in the heart, Let travel through
+        the blood vessel to quickly travel to the heart. '
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8537853838530794517, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1059501469587316530, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1041379994}
+  m_SourcePrefab: {fileID: 100100000, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
 --- !u!1 &220956986
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +538,133 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2000522617}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1001 &307399743
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 629380406}
+    m_Modifications:
+    - target: {fileID: 29380124809487553, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_text
+      value: 'Dialogue
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 29380124809487553, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -650
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -275
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067637856894525461, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: textDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068527337162508130, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+      propertyPath: m_Name
+      value: Dialogue Box
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+--- !u!224 &307399744 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2145092001238444458, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+  m_PrefabInstance: {fileID: 307399743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &307399745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6067637856894525461, guid: 86defe65d87bb084c8722b25075b3803, type: 3}
+  m_PrefabInstance: {fileID: 307399743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace681da76184394284ba64bd6f532ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &393801227
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +835,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 307399745}
     - target: {fileID: 7336675435556894456, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -897,6 +1119,7 @@ MonoBehaviour:
   enemyContainer: {fileID: 516574306}
   delayBeforeNextScene: 1
   nextSceneName: StoryStep4
+  npcScript: {fileID: 1041379994}
 --- !u!1 &573072958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,7 +1464,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8304988838706218937, guid: 7f7cdba62f48f8e41b510c753e514d71, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 307399744}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7cdba62f48f8e41b510c753e514d71, type: 3}
 --- !u!1 &629380404 stripped
@@ -1252,6 +1478,11 @@ GameObject:
 --- !u!1 &629380405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4176354143848261033, guid: 7f7cdba62f48f8e41b510c753e514d71, type: 3}
+  m_PrefabInstance: {fileID: 629380403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &629380406 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8304988838706218937, guid: 7f7cdba62f48f8e41b510c753e514d71, type: 3}
   m_PrefabInstance: {fileID: 629380403}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &814077080
@@ -1800,6 +2031,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020822523}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1041379987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1059501469587316530, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+  m_PrefabInstance: {fileID: 156408053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1041379994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041379987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4145c2d786c494849ad11540e71999f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - Welcome to cancer combat! I'm  Commander Bolt, Your main objective is to kill
+    all the cancer cells. Be ready they are coming at you quick.
+  - Use your gun to shoot the cancer cells
+  - After you're done come talk to me again
+  - 'That''s a call from the main base in the heart, Let travel through the blood
+    vessel to quickly travel to the heart. '
+  dialogueIndex: 0
+  talkerName: Commander Bolt
+  dialogueUI: {fileID: 307399745}
+  interactionDistance: 3
+  interactionKey: f
+  level1flag: 0
 --- !u!1 &1164819412
 GameObject:
   m_ObjectHideFlags: 0
@@ -3916,3 +4177,4 @@ SceneRoots:
   - {fileID: 2051403546}
   - {fileID: 629380403}
   - {fileID: 1674591586}
+  - {fileID: 156408053}

@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
+
 
 
 public class PlayerManager : MonoBehaviour
@@ -28,19 +30,22 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialogueBox == null){
+        if (DialogueBox != null){
             if (DialogueBox.inDialogue)
             {
+                Debug.Log("In dialogue"); // Log message when in dialogue
                 
                 // Disable player movement when in dialogue
                 playerMovement.enabled = false;
                 playerShooting.enabled = false; // Disable shooting when in dialogue
+                Time.timeScale = 0f; 
             }
             else
             {
                 // Enable player movement when not in dialogue
                 playerMovement.enabled = true;
                 playerShooting.enabled = true; // Enable shooting when not in dialogue
+                Time.timeScale = 1f; 
             }
         }
         

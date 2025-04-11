@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-
-public class NPCScript : MonoBehaviour
+public class Level1CommanderBoltDialogue : MonoBehaviour
 {
     public List<string> dialogueLines;
     public int dialogueIndex = 0; // Index to track the current dialogue line
@@ -18,6 +17,8 @@ public class NPCScript : MonoBehaviour
     private bool canInteract = false;
 
 
+    public bool level1flag = false;
+    private bool endMsgDisplayed = false;
 
     void Start()
     {
@@ -34,7 +35,16 @@ public class NPCScript : MonoBehaviour
 
     void Update()
     {
-        
+        if (level1flag && !endMsgDisplayed)
+        {
+            Debug.Log("END MSG!"); // Log message when level 1 is completed
+            dialogueIndex = dialogueLines.Count -1;
+            StartDialogue(); //end level 1
+
+            endMsgDisplayed = true;
+            return;
+        }
+
 
         if (playerTransform != null)
         {
@@ -44,12 +54,10 @@ public class NPCScript : MonoBehaviour
             if (distanceToPlayer <= interactionDistance)
             {
                 canInteract = true;
-                // Optionally, you can display a UI prompt here to indicate interaction is possible
             }
             else
             {
                 canInteract = false;
-                // Optionally, you can hide the UI prompt here
             }
 
             // Check for player interaction input
@@ -61,7 +69,9 @@ public class NPCScript : MonoBehaviour
                 {
                     dialogueIndex = dialogueLines.Count - 1;
                 }
-                playerManager.inDialogue = true; // Set the player in dialogue state
+                if (dialogueIndex == 3 && level1flag == false){
+                    dialogueIndex = 2;
+                }
             }
         }
     }
@@ -78,5 +88,4 @@ public class NPCScript : MonoBehaviour
             Debug.LogWarning($"{gameObject.name} has no dialogue lines or Dialogue UI assigned.");
         }
     }
-    
 }

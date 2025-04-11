@@ -1,4 +1,4 @@
-      using UnityEngine;
+using UnityEngine;
 using TMPro;
 using System.Collections;
 
@@ -116,7 +116,7 @@ public class DialogueBox : MonoBehaviour
                 // Regular character, append it
                 textComponent.text += fullText[i];
             }
-            yield return new WaitForSeconds(textDelay);
+            yield return new WaitForSecondsRealtime(textDelay);
         }
         isTyping = false;
         isDialogueFinished = true;
