@@ -9,7 +9,7 @@ public class DialogueBox : MonoBehaviour
     public GameObject textObj; // Reference to the text object in the UI
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI talkerNameText;
-    public float textDelay = 0.05f; // Adjust typing speed
+    private float textDelay = 0.025f; // Adjust typing speed
 
     private string fullText;
     private int charIndex = 0;
