@@ -8,17 +8,17 @@ public class Level2WaveManager : MonoBehaviour
 {
     public GameObject[] waveContainers; 
     private int currentWaveIndex = 0;
-    private bool canSpawnNextWave = false;
+    public bool canSpawnNextWave = false;
     private bool waveActive = false;
     private List<GameObject> activeEnemies = new List<GameObject>();
 
-    private bool allEnemiesDefeated = false; // Flag to check if all enemies are defeated
+    public bool allEnemiesDefeated = false; // Flag to check if all enemies are defeated
     public GameObject pipeToNextScene; //if player walks into this after all enemies defeated, load next scene
     public string nextSceneName;
 
     void Start()
     {
-        canSpawnNextWave = true;
+        //canSpawnNextWave = true;
 
         // Ensure wave containers are assigned
         if (waveContainers == null || waveContainers.Length == 0)
@@ -67,7 +67,7 @@ public class Level2WaveManager : MonoBehaviour
                 {
                     Debug.Log("All waves completed for this level!");
                     allEnemiesDefeated = true;
-                    StartCoroutine(LoadNextSceneWithDelay());
+                    //StartCoroutine(LoadNextSceneWithDelay());
 
                 }
             }

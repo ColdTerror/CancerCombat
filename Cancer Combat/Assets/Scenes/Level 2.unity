@@ -2972,6 +2972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueLines:
+  - Hope you're ready because here they come
   - "I cooked this one up in the lab with way too much caffeine and not enough safety
     protocols. I present to you the \u201CRadiation Cannon\u201D, It does double
     the damage of your previous weapon, use it wisely!"
@@ -2980,6 +2981,7 @@ MonoBehaviour:
   dialogueUI: {fileID: 1103170113}
   interactionDistance: 3
   interactionKey: f
+  waveManager: {fileID: 1703101907}
 --- !u!1001 &1297214403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3820,6 +3822,8 @@ MonoBehaviour:
   - {fileID: 467478434}
   - {fileID: 531023533}
   - {fileID: 449004241}
+  canSpawnNextWave: 0
+  allEnemiesDefeated: 0
   pipeToNextScene: {fileID: 977465343}
   nextSceneName: StoryStep6
 --- !u!4 &1703101908
@@ -3993,6 +3997,7 @@ MonoBehaviour:
   dialogueUI: {fileID: 1103170113}
   interactionDistance: 3
   interactionKey: f
+  waveManager: {fileID: 1703101907}
 --- !u!1 &1908771137
 GameObject:
   m_ObjectHideFlags: 0

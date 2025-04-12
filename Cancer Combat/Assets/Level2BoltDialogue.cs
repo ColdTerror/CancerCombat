@@ -15,6 +15,8 @@ public class Level2BoltDialogue : MonoBehaviour
     private Transform playerTransform;
     private bool canInteract = false;
 
+    public Level2WaveManager waveManager; // Reference to the WaveManager script
+
 
 
     void Start()
@@ -52,8 +54,17 @@ public class Level2BoltDialogue : MonoBehaviour
             // Check for player interaction input
             if (canInteract && Input.GetKeyDown(interactionKey))
             {
+                if (waveManager.allEnemiesDefeated && dialogueIndex == 0){
+                    dialogueIndex = 1;
+                }
                 StartDialogue();
                 dialogueIndex++;
+                //waveManager.canSpawnNextWave = true; // Allow the first wave to spawn
+
+                if (!waveManager.allEnemiesDefeated){
+                    dialogueIndex = 0;
+                }
+                
                 if (dialogueIndex >= dialogueLines.Count)
                 {
                     dialogueIndex = dialogueLines.Count - 1;

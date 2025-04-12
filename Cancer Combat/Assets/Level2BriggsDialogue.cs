@@ -15,7 +15,7 @@ public class Level2BriggsDialogue : MonoBehaviour
     private Transform playerTransform;
     private bool canInteract = false;
 
-
+    public Level2WaveManager waveManager; // Reference to the WaveManager script   
 
     void Start()
     {
@@ -52,8 +52,16 @@ public class Level2BriggsDialogue : MonoBehaviour
             // Check for player interaction input
             if (canInteract && Input.GetKeyDown(interactionKey))
             {
+                if (waveManager.allEnemiesDefeated){
+                    dialogueIndex = 1;
+                }
                 StartDialogue();
                 dialogueIndex++;
+                waveManager.canSpawnNextWave = true;
+                if (!waveManager.allEnemiesDefeated){
+                    dialogueIndex = 0;
+                }
+
                 if (dialogueIndex >= dialogueLines.Count)
                 {
                     dialogueIndex = dialogueLines.Count - 1;
