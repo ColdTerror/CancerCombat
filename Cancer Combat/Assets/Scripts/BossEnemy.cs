@@ -32,7 +32,7 @@ public class BossAI : MonoBehaviour
 
     // Boss Health 
     public int maxHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
 
 
     //UI
@@ -301,7 +301,6 @@ public class BossAI : MonoBehaviour
     {
         currentHealth -= damageAmount;
         Debug.Log("Boss took " + damageAmount + " damage. Current health: " + currentHealth);
-        // Add visual/audio feedback for damage
     }
 
     void Die()
@@ -316,6 +315,9 @@ public class BossAI : MonoBehaviour
         textObj.GetComponent<TextMeshProUGUI>().text = "You Win!";
 
         winButton.gameObject.SetActive(true);
+
+        print("Timescale");
+        Time.timeScale = 0f; // Pause the game
         
 
     }

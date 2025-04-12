@@ -41,7 +41,6 @@ public class PlayerShooting : MonoBehaviour
             // Create shockwave
             if (muzzleFlashEffect != null)
             {
-                Debug.Log("muzzleFlashEffect effect instantiated!");
                 
 
                 GameObject muzzleFlashInstance = Instantiate(muzzleFlashEffect, spawnPosition, weaponMuzzle.rotation);

@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         if (DialogueBox != null){
-            if (DialogueBox.inDialogue)
+            if (DialogueBox.inDialogue || button.activeSelf)
             {
                 Debug.Log("In dialogue"); // Log message when in dialogue
                 
