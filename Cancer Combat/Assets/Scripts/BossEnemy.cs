@@ -314,14 +314,13 @@ public class BossAI : MonoBehaviour
         Rigidbody bossRb = GetComponent<Rigidbody>();
         if (bossRb != null){
             bossRb.linearVelocity = Vector3.zero;
-            // Calculate the bounce direction
-            //Vector3 bounceDirection = -transform.forward; // Simple bounce directly backwards
+ 
 
             // You might want a more sophisticated bounce based on the collision normal:
             Vector3 bounceDirection = Vector3.Reflect(transform.forward, collision.contacts[0].normal);
 
             // Apply a force to push the boss backwards
-            float bounceForce = 10f; // Adjust this value to control the bounce strength
+            float bounceForce = 15f; // Adjust this value to control the bounce strength
             bossRb.AddForce(bounceDirection * bounceForce, ForceMode.Impulse); // Use Impulse for a sudden bounce
 
         }
