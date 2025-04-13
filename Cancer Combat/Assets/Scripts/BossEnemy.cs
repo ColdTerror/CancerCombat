@@ -40,6 +40,12 @@ public class BossAI : MonoBehaviour
     public GameObject textObj;
     public GameObject winButton;
 
+
+    public AudioSource landSoundSource;
+
+    public AudioSource chargeSoundSource;
+
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -92,6 +98,7 @@ public class BossAI : MonoBehaviour
                 StartCoroutine(JumpSlamAttack());
                 break;
             case 2:
+                chargeSoundSource.Play(); // Start the charge sound
                 StartChargeAttack();
                 break;
         }
@@ -131,6 +138,16 @@ public class BossAI : MonoBehaviour
             while (!IsGrounded()) // wait till the boss is grounded
             {
                 yield return null;
+            }
+
+            // Play the landing sound
+            if (landSoundSource != null)
+            {
+                landSoundSource.Play();
+            }
+            else
+            {
+                Debug.LogWarning("Landing Audio Source not assigned!");
             }
             rb.linearVelocity = Vector3.zero;
 
@@ -215,6 +232,7 @@ public class BossAI : MonoBehaviour
             Vector3 direction = (chargeTargetPosition - transform.position).normalized; // Keep the original direction for movement
             Rigidbody rb = GetComponent<Rigidbody>();
 
+            
 
 
 
@@ -224,7 +242,7 @@ public class BossAI : MonoBehaviour
             }
             else //end of charge
             {
-                
+                chargeSoundSource.Stop(); // Stop the charge sound
                 rb.linearVelocity = Vector3.zero;
                 isCharging = false;
                 nextAttackTime = Time.time + attackCooldown + 1f; // Add a cooldown after charging
@@ -274,6 +292,7 @@ public class BossAI : MonoBehaviour
                 Debug.LogWarning("Player hit by charge but has no Rigidbody for knockback!");
             }
 
+            chargeSoundSource.Stop();
             // Stop the charge after hitting the player
             isCharging = false;
             Rigidbody bossRb = GetComponent<Rigidbody>();
@@ -283,16 +302,35 @@ public class BossAI : MonoBehaviour
         // Check for obstacle collision during charge (using Tag)
         else if (isCharging && collision.gameObject.CompareTag("Obstacle"))
         {
-            StopChargeOnObstacleHit();
+            StopChargeOnObstacleHit(collision);
         }
     }
 
-    void StopChargeOnObstacleHit()
+    void StopChargeOnObstacleHit(Collision collision)
     {
         Debug.Log("Boss hit an obstacle while charging!");
+        chargeSoundSource.Stop();
         isCharging = false;
         Rigidbody bossRb = GetComponent<Rigidbody>();
-        if (bossRb != null) bossRb.linearVelocity = Vector3.zero;
+        if (bossRb != null){
+            bossRb.linearVelocity = Vector3.zero;
+            // Calculate the bounce direction
+            //Vector3 bounceDirection = -transform.forward; // Simple bounce directly backwards
+
+            // You might want a more sophisticated bounce based on the collision normal:
+            Vector3 bounceDirection = Vector3.Reflect(transform.forward, collision.contacts[0].normal);
+
+            // Apply a force to push the boss backwards
+            float bounceForce = 10f; // Adjust this value to control the bounce strength
+            bossRb.AddForce(bounceDirection * bounceForce, ForceMode.Impulse); // Use Impulse for a sudden bounce
+
+        }
+        
+        
+        
+        
+        
+        
         nextAttackTime = Time.time + attackCooldown;
     }
 

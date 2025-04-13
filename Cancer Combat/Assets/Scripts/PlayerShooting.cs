@@ -11,6 +11,10 @@ public class PlayerShooting : MonoBehaviour
 
     public GameObject muzzleFlashEffect; // Visual effect for the muzzleflash
 
+
+    public AudioSource shootingSoundSource;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,6 +53,15 @@ public class PlayerShooting : MonoBehaviour
                 
                 // Get the Particle System component
                 //ParticleSystem ps = muzzleFlashInstance.GetComponent<ParticleSystem>();
+            }
+            // Play the shooting sound
+            if (shootingSoundSource != null)
+            {
+                shootingSoundSource.Play();
+            }
+            else
+            {
+                Debug.LogWarning("Shooting Audio Source not assigned!");
             }
         }
         else
