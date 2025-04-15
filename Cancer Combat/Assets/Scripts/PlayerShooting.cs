@@ -14,6 +14,8 @@ public class PlayerShooting : MonoBehaviour
 
     public AudioSource shootingSoundSource;
 
+    public int bulletDamage = 5;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,7 +43,21 @@ public class PlayerShooting : MonoBehaviour
             // Instantiate the bullet at the offset position and rotation
             GameObject bulletInstance = Instantiate(bulletPrefab, spawnPosition, weaponMuzzle.rotation);
 
+            
+            // Get the Bullet component from the instance
+            Bullet bulletComponent = bulletInstance.GetComponent<Bullet>();
 
+            //Check if the bulletComponent exists before trying to set the damage.
+            if (bulletComponent != null)
+            {
+                // Set the damage of the bullet
+                bulletComponent.setDamage(bulletDamage);
+            }
+            else
+            {
+                Debug.LogError("Bullet prefab is missing the Bullet component!");
+            }
+            
             // Create shockwave
             if (muzzleFlashEffect != null)
             {

@@ -343,6 +343,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 439484405}
     m_Modifications:
+    - target: {fileID: 1649629086960501424, guid: f8a666ba79fa6d4498ddf2a071e9a4d6, type: 3}
+      propertyPath: maxHealth
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3222003810833202875, guid: f8a666ba79fa6d4498ddf2a071e9a4d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.310974
@@ -1308,6 +1312,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1642243282025911009, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
+      propertyPath: bulletDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: button
       value: 
@@ -1318,7 +1326,7 @@ PrefabInstance:
       objectReference: {fileID: 6813612720574740792}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: maxHealth
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: winButton
