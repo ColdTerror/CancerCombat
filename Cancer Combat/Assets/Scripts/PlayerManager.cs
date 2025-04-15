@@ -19,12 +19,20 @@ public class PlayerManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlayerShooting playerShooting;
 
+
+    public GameObject gui;
+    public GameObject healthUI;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = maxHealth; // Initialize the player's health to maximum at the start of the game
         textObj.gameObject.SetActive(false);
         button.gameObject.SetActive(false);
+        gui.gameObject.SetActive(true); 
+
+        healthUI.GetComponent<TextMeshProUGUI>().text = "Player Health\n " + currentHealth.ToString(); // Update the health UI text
+        
     }
 
     // Update is called once per frame
@@ -63,6 +71,7 @@ public class PlayerManager : MonoBehaviour
         currentHealth -= damage;
 
         Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth); // Log the damage taken and current health
+        healthUI.GetComponent<TextMeshProUGUI>().text = "Player Health\n " + currentHealth.ToString(); // Update the health UI text
         // Ensure current health doesn't go below 0
         if (currentHealth <= 0)
         {
@@ -76,6 +85,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (isDead) return; // Only die once
 
+        gui.gameObject.SetActive(false);
         Debug.Log("player has died"); // Log message when player dies
         textObj.gameObject.SetActive(true);
         textObj.GetComponent<TextMeshProUGUI>().text = "You Lose!";

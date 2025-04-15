@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class PlayerShooting : MonoBehaviour
 
     public int bulletDamage = 5;
 
+    public GameObject damageUI;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        damageUI.GetComponent<TextMeshProUGUI>().text = "Player Damage\n " + bulletDamage.ToString(); // Update the health UI text
     }
 
     void Update()
@@ -65,7 +68,7 @@ public class PlayerShooting : MonoBehaviour
 
                 GameObject muzzleFlashInstance = Instantiate(muzzleFlashEffect, spawnPosition, weaponMuzzle.rotation);
                 // Destroy the muzzle flash effect after a specified duration
-                Destroy(muzzleFlashInstance, .1f);
+                Destroy(muzzleFlashInstance, .05f);
                 
                 // Get the Particle System component
                 //ParticleSystem ps = muzzleFlashInstance.GetComponent<ParticleSystem>();
