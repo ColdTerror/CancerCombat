@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4691432932941702255
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 237785334735186634, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_Name
+      value: BossEnemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -48.071754
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 47.176804
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849101380058774479, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649618892929222476, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895095709962774884, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4458458703790680986, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+    - {fileID: 8170572216987167849, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 237785334735186634, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2724634540942643003}
+    - targetCorrespondingSourceObject: {fileID: 237785334735186634, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5829557119347329726}
+    - targetCorrespondingSourceObject: {fileID: 237785334735186634, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 855044781205155941}
+  m_SourcePrefab: {fileID: 100100000, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+--- !u!114 &1115814182561702691 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5649618892929222476, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+  m_PrefabInstance: {fileID: 4691432932941702255}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780458742166523557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87cfbe182f905db48b56a051b487bebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4780458742166523557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 237785334735186634, guid: d11f98fbc3f64634dbf1fdfe2e4520dd, type: 3}
+  m_PrefabInstance: {fileID: 4691432932941702255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2724634540942643003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780458742166523557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e94af21aa896b4eb7e8031ca247b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - This body is mine! No one will stop me!
+  - You? You tiny small celly think you can take on me? In your dreams
+  dialogueIndex: 0
+  talkerName: Tumor Cell
+  dialogueUI: {fileID: 0}
+  bossScript: {fileID: 1115814182561702691}
+--- !u!33 &5829557119347329726
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780458742166523557}
+  m_Mesh: {fileID: -2432090755550338912, guid: 80f3a1b952d3a4a46971a79ab1ee0b84, type: 3}
+--- !u!135 &855044781205155941
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780458742166523557}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.4825363
+  m_Center: {x: -0.028419733, y: -0.014750481, z: -0.005735576}
