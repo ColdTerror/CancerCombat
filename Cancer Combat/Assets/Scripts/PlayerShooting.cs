@@ -5,6 +5,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public GameObject bulletPrefab; // Drag your Bullet prefab here in the Inspector
     public Transform weaponMuzzle;   // Drag the weapon cube's Transform here in the Inspector
+    public Transform cameraTransform;
     public float fireRate = 0.2f;    // Time in seconds between shots
     private float nextFireTime = 0f;
 
@@ -41,10 +42,11 @@ public class PlayerShooting : MonoBehaviour
         if (bulletPrefab != null && weaponMuzzle != null)
         {
             // Calculate the spawn position slightly in front of the muzzle
-            Vector3 spawnPosition = weaponMuzzle.position + weaponMuzzle.forward * bulletSpawnOffset;
+            //Vector3 spawnPosition = weaponMuzzle.position + weaponMuzzle.forward * bulletSpawnOffset;
+            Vector3 spawnPosition = weaponMuzzle.position + cameraTransform.forward * bulletSpawnOffset;
 
             // Instantiate the bullet at the offset position and rotation
-            GameObject bulletInstance = Instantiate(bulletPrefab, spawnPosition, weaponMuzzle.rotation);
+            GameObject bulletInstance = Instantiate(bulletPrefab, spawnPosition, cameraTransform.rotation);
 
             
             // Get the Bullet component from the instance
@@ -66,7 +68,7 @@ public class PlayerShooting : MonoBehaviour
             {
                 
 
-                GameObject muzzleFlashInstance = Instantiate(muzzleFlashEffect, spawnPosition, weaponMuzzle.rotation);
+                GameObject muzzleFlashInstance = Instantiate(muzzleFlashEffect, spawnPosition, cameraTransform.rotation);
                 // Destroy the muzzle flash effect after a specified duration
                 Destroy(muzzleFlashInstance, .05f);
                 
