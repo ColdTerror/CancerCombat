@@ -425,6 +425,14 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 1.2375
       objectReference: {fileID: 0}
+    - target: {fileID: 4191798325726762697, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191798325726762697, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.74
@@ -929,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1213356871036067960, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1213356871036067960, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -967,6 +975,10 @@ PrefabInstance:
       propertyPath: damageUI
       value: 
       objectReference: {fileID: 1468144876}
+    - target: {fileID: 4393236712960769377, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: gui
       value: 
@@ -2206,7 +2218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - Welcome to cancer combat! I'm  Commander Bolt, Your main objective is to kill
-    all the cancer cells. Be ready they are coming at you quick.
+    all the cancer cells. Be ready they are coming at you quick. (Press LMB to shoot)
   - Use your gun to shoot the cancer cells
   - After you're done come talk to me again
   - 'That''s a call from the main base in the heart, Let travel through the blood
