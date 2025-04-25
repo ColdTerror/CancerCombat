@@ -14,6 +14,14 @@ public class NextStoryStep : MonoBehaviour
     public string Step7SceneName = "StoryStep7";     
     public string MainMenu = "MainMenu";  
 
+
+    void Start()
+    {
+        Time.timeScale = 1f; // Ensure the game is running at normal speed
+        Debug.Log(Time.timeScale);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     public void Step1()
     {
         unlockCursor();

@@ -10,6 +10,9 @@ public class BossAI : MonoBehaviour
     private float nextAttackTime;
     private int currentAttackPhase = 0; // To cycle through attacks
 
+    public AudioSource levelSoundSource; // Sound for the level
+    public AudioSource bossSoundSource; // Sound for the boss
+
     // Attack 1: Spawn Enemies
     public GameObject baseEnemyPrefab;
     public Transform[] spawnPoints; // Array of positions to spawn enemies
@@ -48,6 +51,7 @@ public class BossAI : MonoBehaviour
 
     void Start()
     {
+        
         currentHealth = maxHealth;
         nextAttackTime = Time.time + attackCooldown;
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -84,6 +88,19 @@ public class BossAI : MonoBehaviour
         }
     }
 
+    public void changeSong(){
+        if (levelSoundSource != null && bossSoundSource != null)
+        {
+            Debug.Log("Level/Boss sound source assigned!");
+            levelSoundSource.Stop(); // Stop level sound
+            bossSoundSource.Play(); // Start boss sound
+        }
+        else
+        {
+            Debug.LogWarning("Level/Boss sound source not assigned!");
+        }
+    }
+    
     void PerformAttack()
     {
         currentAttackPhase++;

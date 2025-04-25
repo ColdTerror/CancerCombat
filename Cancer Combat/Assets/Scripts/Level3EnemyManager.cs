@@ -15,6 +15,7 @@ public class Level3EnemyManager : MonoBehaviour
 
     [Header("Boss Enemy")]
     public GameObject bossEnemy;
+    public BossAI bossScript;
     private bool bossSpawned = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,7 +36,7 @@ public class Level3EnemyManager : MonoBehaviour
         }
 
         bossEnemy.SetActive(false); // Ensure the boss enemy is initially inactive
-
+        
         
     }
 
@@ -76,5 +77,6 @@ public class Level3EnemyManager : MonoBehaviour
     void spawnBoss(){
         bossEnemy.SetActive(true);
         bossSpawned = true;
+        bossScript.changeSong();
     }
 }

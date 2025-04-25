@@ -27,7 +27,7 @@ public class Level3BossDialogue : MonoBehaviour
             dialogueIndex++;
         }
 
-        else if (bossScript.enabled && dialogueIndex == 1 && bossScript.currentHealth <= 50){
+        else if (bossScript.enabled && dialogueIndex == 1 && bossScript.currentHealth <= 100){
             print(bossScript.currentHealth);
             StartDialogue();
             dialogueIndex++;
