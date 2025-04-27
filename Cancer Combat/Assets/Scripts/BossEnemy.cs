@@ -76,6 +76,11 @@ public class BossAI : MonoBehaviour
             return;
         }
 
+        if (currentHealth <= 100)
+        {
+            attackCooldown = 1f;
+        }
+
         if (Time.time >= nextAttackTime && player != null && !isCharging)
         {
             PerformAttack();

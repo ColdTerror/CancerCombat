@@ -3741,12 +3741,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115814182561702691, guid: b1e2c500b56b4564b8be4d668695161e, type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1115814182561702691, guid: b1e2c500b56b4564b8be4d668695161e, type: 3}
       propertyPath: winButton
       value: 
       objectReference: {fileID: 863637083}
+    - target: {fileID: 1115814182561702691, guid: b1e2c500b56b4564b8be4d668695161e, type: 3}
+      propertyPath: attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1115814182561702691, guid: b1e2c500b56b4564b8be4d668695161e, type: 3}
       propertyPath: baseEnemyPrefab
       value: 
