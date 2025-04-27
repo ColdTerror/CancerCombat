@@ -3,3 +3,7 @@ Enemy Spawn Sound - spawn.ogg by pepingrillin -- https://freesound.org/s/252083/
 Boss Charging Sound - monster charging by soundmast123 -- https://freesound.org/s/571976/ -- License: Attribution 3.0
 Boss Landing Sound - Hard Landing.wav by hatchetgirl -- https://freesound.org/s/386905/ -- License: Attribution 4.0
 Gun Shooting Sound - 8-Bit Gun 2_3 by Joao_Janz -- https://freesound.org/s/478323/ -- License: Creative Commons 0
+SFXRunGround1.wav by WakuWakuWakuWaku -- https://freesound.org/s/422990/ -- License: Creative Commons 0
+SFXRunGround2.wav by WakuWakuWakuWaku -- https://freesound.org/s/422989/ -- License: Creative Commons 0
+SFXRunGround3.wav by WakuWakuWakuWaku -- https://freesound.org/s/422994/ -- License: Creative Commons 0
+SFXRunGround4.wav by WakuWakuWakuWaku -- https://freesound.org/s/422993/ -- License: Creative Commons 0

@@ -19,11 +19,12 @@ public class PlayerMovement : MonoBehaviour
     private float xRotation = 0f;
 
     // Head bobbing variables
-    public float bobFrequency = 1.8f; // Frequency of the bobbing (steps per second)
+    public float bobFrequency = 5f; // Frequency of the bobbing (steps per second)
     public float bobAmplitudeVertical = 0.15f; // Vertical amplitude of the bobbing
     public float bobAmplitudeHorizontal = 0.05f; // Horizontal amplitude of the bobbing
     private float bobTimer = 0.0f;
     private Vector3 initialCameraPosition;
+    private Vector3 headBobOffset;
 
     // Footstep sound variables
     public AudioSource footstepAudioSource; // Assign an AudioSource for footsteps
@@ -140,11 +141,14 @@ public class PlayerMovement : MonoBehaviour
             float horizontalOffset = Mathf.Cos(bobTimer * 2) * bobAmplitudeHorizontal;
 
             // Apply the bobbing offsets to the camera
-            cameraTransform.localPosition = initialCameraPosition + new Vector3(horizontalOffset, verticalOffset, 0);
+            headBobOffset = new Vector3(horizontalOffset, verticalOffset, 0);
+            //cameraTransform.localPosition = initialCameraPosition + new Vector3(horizontalOffset, verticalOffset, 0);
+            cameraTransform.localPosition = initialCameraPosition + headBobOffset;
         }
         else
         {
             // Reset the bobbing when not moving
+            headBobOffset = Vector3.Lerp(headBobOffset, Vector3.zero, Time.deltaTime * 10f); // Adjust damping factor as needed
             bobTimer = 0.0f;
             cameraTransform.localPosition = initialCameraPosition;
         }
