@@ -17,6 +17,8 @@ public class Level2BriggsDialogue : MonoBehaviour
 
     public Level2WaveManager waveManager; // Reference to the WaveManager script   
 
+    public GameObject DialogueAvailableObject;
+
     void Start()
     {
         // Find the player's transform (you might need to adjust this based on your player setup)
@@ -31,7 +33,9 @@ public class Level2BriggsDialogue : MonoBehaviour
 
     void Update()
     {
-        
+        if (waveManager.allEnemiesDefeated && DialogueAvailableObject.activeSelf == false && dialogueIndex == 0){
+            DialogueAvailableObject.SetActive(true);
+        }
 
         if (playerTransform != null)
         {
@@ -54,17 +58,20 @@ public class Level2BriggsDialogue : MonoBehaviour
             {
                 if (waveManager.allEnemiesDefeated){
                     dialogueIndex = 1;
+                    DialogueAvailableObject.SetActive(true);
                 }
                 StartDialogue();
                 dialogueIndex++;
                 waveManager.canSpawnNextWave = true;
                 if (!waveManager.allEnemiesDefeated){
                     dialogueIndex = 0;
+                    DialogueAvailableObject.SetActive(false);
                 }
 
                 if (dialogueIndex >= dialogueLines.Count)
                 {
                     dialogueIndex = dialogueLines.Count - 1;
+                    DialogueAvailableObject.SetActive(false);
                 }
             }
         }

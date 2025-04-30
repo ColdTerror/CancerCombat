@@ -507,7 +507,10 @@ PrefabInstance:
     - {fileID: 8537853838530794517, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
     - {fileID: 4125914177714458880, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 692016738}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1059501469587316530, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
       insertIndex: -1
@@ -516,6 +519,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1041379995}
   m_SourcePrefab: {fileID: 100100000, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+--- !u!4 &156408054 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7482572593330881231, guid: 2d756cadd5ece79448a44b176d955f78, type: 3}
+  m_PrefabInstance: {fileID: 156408053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &220956986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1674,73 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8304988838706218937, guid: 7f7cdba62f48f8e41b510c753e514d71, type: 3}
   m_PrefabInstance: {fileID: 629380403}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &692016737
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 156408054}
+    m_Modifications:
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169809049704571749, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+      propertyPath: m_Name
+      value: Dialogue Available!
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+--- !u!4 &692016738 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2943409519762222875, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+  m_PrefabInstance: {fileID: 692016737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &692016739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4169809049704571749, guid: 7fff8c2f1c7827a44805bb74d07b60d8, type: 3}
+  m_PrefabInstance: {fileID: 692016737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &814077080
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,6 +2317,7 @@ MonoBehaviour:
   interactionDistance: 3
   interactionKey: f
   level1flag: 0
+  DialogueAvailableObject: {fileID: 692016739}
 --- !u!33 &1041379995
 MeshFilter:
   m_ObjectHideFlags: 0

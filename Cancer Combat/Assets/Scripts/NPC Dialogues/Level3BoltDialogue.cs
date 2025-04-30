@@ -18,7 +18,7 @@ public class Level3BoltDialogue : MonoBehaviour
 
     public Level3EnemyManager enemyManager; // Reference to the WaveManager script
 
-
+    public GameObject DialogueAvailableObject;
 
     void Start()
     {
@@ -61,7 +61,9 @@ public class Level3BoltDialogue : MonoBehaviour
                 if (dialogueIndex >= dialogueLines.Count)
                 {
                     dialogueIndex = dialogueLines.Count - 1;
+                    
                 }
+                DialogueAvailableObject.SetActive(false);
                 enemyManager.baseEnemiesSpawned = true; // Allow enemies to spawn
             }
         }

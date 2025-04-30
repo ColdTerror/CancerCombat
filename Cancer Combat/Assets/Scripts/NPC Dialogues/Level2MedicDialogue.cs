@@ -15,7 +15,7 @@ public class Level2MedicDialogue : MonoBehaviour
     private Transform playerTransform;
     private bool canInteract = false;
 
-
+    public GameObject DialogueAvailableObject;
 
     void Start()
     {
@@ -57,6 +57,7 @@ public class Level2MedicDialogue : MonoBehaviour
                 if (dialogueIndex >= dialogueLines.Count)
                 {
                     dialogueIndex = dialogueLines.Count - 1;
+                    DialogueAvailableObject.SetActive(false);
                 }
             }
         }

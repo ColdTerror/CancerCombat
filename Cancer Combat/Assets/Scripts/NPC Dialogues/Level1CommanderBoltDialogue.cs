@@ -20,6 +20,8 @@ public class Level1CommanderBoltDialogue : MonoBehaviour
     public bool level1flag = false;
     private bool endMsgDisplayed = false;
 
+    public GameObject DialogueAvailableObject;
+
     void Start()
     {
         // Find the player's transform (you might need to adjust this based on your player setup)
@@ -30,6 +32,7 @@ public class Level1CommanderBoltDialogue : MonoBehaviour
             Debug.LogError("Player not found in the scene. Make sure the player has the 'Player' tag.");
             enabled = false; // Disable this script if no player is found
         }
+
     }
 
 
@@ -67,10 +70,13 @@ public class Level1CommanderBoltDialogue : MonoBehaviour
                 dialogueIndex++;
                 if (dialogueIndex >= dialogueLines.Count)
                 {
+                    DialogueAvailableObject.SetActive(false);
                     dialogueIndex = dialogueLines.Count - 1;
                 }
                 if (dialogueIndex == 3 && level1flag == false){
+                    DialogueAvailableObject.SetActive(false);
                     dialogueIndex = 2;
+                    
                 }
             }
         }

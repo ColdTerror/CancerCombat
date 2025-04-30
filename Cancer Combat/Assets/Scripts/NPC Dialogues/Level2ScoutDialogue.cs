@@ -15,7 +15,7 @@ public class Level2ScoutDialogue : MonoBehaviour
     private Transform playerTransform;
     private bool canInteract = false;
 
-
+    public GameObject DialogueAvailableObject;
 
     void Start()
     {
@@ -26,6 +26,8 @@ public class Level2ScoutDialogue : MonoBehaviour
             Debug.LogError("Player not found in the scene. Make sure the player has the 'Player' tag.");
             enabled = false; // Disable this script if no player is found
         }
+
+
     }
 
 
@@ -57,6 +59,7 @@ public class Level2ScoutDialogue : MonoBehaviour
                 if (dialogueIndex >= dialogueLines.Count)
                 {
                     dialogueIndex = dialogueLines.Count - 1;
+                    DialogueAvailableObject.SetActive(false);
                 }
             }
         }
