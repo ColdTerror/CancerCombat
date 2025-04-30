@@ -1404,7 +1404,7 @@ MonoBehaviour:
   talkerName: Commander Bolt
   dialogueUI: {fileID: 937836049}
   interactionDistance: 3
-  interactionKey: f
+  interactionKey: e
   enemyManager: {fileID: 1966326232}
   DialogueAvailableObject: {fileID: 239836759}
 --- !u!33 &486317454

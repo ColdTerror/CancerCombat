@@ -17,6 +17,8 @@ public class Level2MedicDialogue : MonoBehaviour
 
     public GameObject DialogueAvailableObject;
 
+    public PlayerManager playerManager; // Reference to the PlayerManager script
+
     void Start()
     {
         // Find the player's transform (you might need to adjust this based on your player setup)
@@ -54,6 +56,7 @@ public class Level2MedicDialogue : MonoBehaviour
             {
                 StartDialogue();
                 dialogueIndex++;
+                playerManager.setMaxHealth(playerManager.maxHealth * 2.0f);
                 if (dialogueIndex >= dialogueLines.Count)
                 {
                     dialogueIndex = dialogueLines.Count - 1;

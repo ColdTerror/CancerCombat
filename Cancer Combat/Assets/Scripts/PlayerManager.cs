@@ -22,7 +22,23 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject gui;
     public GameObject healthUI;
+    public GameObject damageUI;
 
+    public void setMaxHealth(float health){
+        maxHealth = health; // Set the maximum health of the player
+        currentHealth = maxHealth; // Initialize current health to maximum
+        setUIHealth(currentHealth); // Update the health UI text
+        
+    }
+    public void setUIHealth(float health){
+        healthUI.GetComponent<TextMeshProUGUI>().text = "Player Health\n " + currentHealth.ToString(); // Update the health UI text
+    }
+
+    public void setUIDamage(float damage){
+        damageUI.GetComponent<TextMeshProUGUI>().text = "Player Damage\n " + damage.ToString(); // Update the health UI text
+
+    }
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,8 +47,8 @@ public class PlayerManager : MonoBehaviour
         button.gameObject.SetActive(false);
         gui.gameObject.SetActive(true); 
 
-        healthUI.GetComponent<TextMeshProUGUI>().text = "Player Health\n " + currentHealth.ToString(); // Update the health UI text
         
+        setUIHealth(currentHealth); // Set the initial health UI text
     }
 
     // Update is called once per frame
@@ -71,7 +87,7 @@ public class PlayerManager : MonoBehaviour
         currentHealth -= damage;
 
         Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth); // Log the damage taken and current health
-        healthUI.GetComponent<TextMeshProUGUI>().text = "Player Health\n " + currentHealth.ToString(); // Update the health UI text
+        setUIHealth(currentHealth);
         // Ensure current health doesn't go below 0
         if (currentHealth <= 0)
         {

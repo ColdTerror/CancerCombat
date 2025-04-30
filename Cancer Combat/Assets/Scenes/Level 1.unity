@@ -2315,7 +2315,7 @@ MonoBehaviour:
   talkerName: Commander Bolt
   dialogueUI: {fileID: 307399745}
   interactionDistance: 3
-  interactionKey: f
+  interactionKey: e
   level1flag: 0
   DialogueAvailableObject: {fileID: 692016739}
 --- !u!33 &1041379995

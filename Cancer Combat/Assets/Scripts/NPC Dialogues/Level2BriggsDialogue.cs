@@ -19,6 +19,8 @@ public class Level2BriggsDialogue : MonoBehaviour
 
     public GameObject DialogueAvailableObject;
 
+    public PlayerManager playerManager; // Reference to the PlayerManager script
+
     void Start()
     {
         // Find the player's transform (you might need to adjust this based on your player setup)
@@ -72,6 +74,7 @@ public class Level2BriggsDialogue : MonoBehaviour
                 {
                     dialogueIndex = dialogueLines.Count - 1;
                     DialogueAvailableObject.SetActive(false);
+                    playerManager.setUIDamage(10f);
                 }
             }
         }

@@ -438,7 +438,7 @@ MonoBehaviour:
   talkerName: Steve
   dialogueUI: {fileID: 1103170113}
   interactionDistance: 3
-  interactionKey: f
+  interactionKey: e
   DialogueAvailableObject: {fileID: 1782256446}
 --- !u!1 &204937295
 GameObject:
@@ -2286,8 +2286,9 @@ MonoBehaviour:
   talkerName: Alli
   dialogueUI: {fileID: 1103170113}
   interactionDistance: 3
-  interactionKey: f
+  interactionKey: e
   DialogueAvailableObject: {fileID: 730302783}
+  playerManager: {fileID: 1398042083}
 --- !u!1 &975170904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,9 +3281,10 @@ MonoBehaviour:
   talkerName: Briggs
   dialogueUI: {fileID: 1103170113}
   interactionDistance: 3
-  interactionKey: f
+  interactionKey: e
   waveManager: {fileID: 1703101907}
   DialogueAvailableObject: {fileID: 1891353305}
+  playerManager: {fileID: 1398042083}
 --- !u!33 &1235642304
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3478,12 +3480,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1297214405}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
+      propertyPath: damageUI
+      value: 
+      objectReference: {fileID: 1990885743}
+    - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: healthUI
       value: 
       objectReference: {fileID: 1990885744}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: maxHealth
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
       propertyPath: DialogueBox
@@ -3503,6 +3509,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2739484680222131334, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
   m_PrefabInstance: {fileID: 1398042081}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1398042083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6597424859759136446, guid: d7a9affe4e9dbc44a84fc22410f133b7, type: 3}
+  m_PrefabInstance: {fileID: 1398042081}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15211a1152f096845b6cfb87d2147c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1440058846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4362,7 +4379,7 @@ MonoBehaviour:
   talkerName: Bolt
   dialogueUI: {fileID: 1103170113}
   interactionDistance: 3
-  interactionKey: f
+  interactionKey: e
   waveManager: {fileID: 1703101907}
   DialogueAvailableObject: {fileID: 605366716}
 --- !u!33 &1852595137
