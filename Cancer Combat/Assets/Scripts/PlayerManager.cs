@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject textObj; // Reference to the lose text object in the UI
     public GameObject button;
+
     
     public DialogueBox DialogueBox;
 
@@ -45,7 +46,9 @@ public class PlayerManager : MonoBehaviour
         currentHealth = maxHealth; // Initialize the player's health to maximum at the start of the game
         textObj.gameObject.SetActive(false);
         button.gameObject.SetActive(false);
+
         gui.gameObject.SetActive(true); 
+        
 
         
         setUIHealth(currentHealth); // Set the initial health UI text
@@ -57,7 +60,6 @@ public class PlayerManager : MonoBehaviour
         if (DialogueBox != null){
             if (DialogueBox.inDialogue || button.activeSelf)
             {
-                Debug.Log("In dialogue"); // Log message when in dialogue
                 
                 // Disable player movement when in dialogue
                 playerMovement.enabled = false;

@@ -19,7 +19,7 @@ public class BossAI : MonoBehaviour
 
     // Attack 2: Jump and Slam
     public float jumpForce = 10f;
-    public float slamRadius = 5f;
+    public float slamRadius = 50f;
     public float shockwaveForce = 10f;
     public float slamDamage = 10; // Damage dealt to the player on slam
     public LayerMask shockwaveTargetLayer; // Layers that the shockwave affects
@@ -78,7 +78,7 @@ public class BossAI : MonoBehaviour
 
         if (currentHealth <= 100)
         {
-            attackCooldown = 1f;
+            attackCooldown = attackCooldown / 2;
         }
 
         if (Time.time >= nextAttackTime && player != null && !isCharging)

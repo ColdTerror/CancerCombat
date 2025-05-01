@@ -47,12 +47,10 @@ public class DialogueBox : MonoBehaviour
         {
             if (isTyping)
             {
-                Debug.Log("Skip");
                 SkipText();
             }
             else if (isDialogueFinished)
             {
-                Debug.Log("Stopping");
                 StopDialog();
             }
         }

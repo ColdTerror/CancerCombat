@@ -6,6 +6,16 @@ public class EndUIManager : MonoBehaviour
     [Header("Scene Names")]
     public string MainMenuName = "MainMenu"; 
 
+    public GameObject menuButton;
+
+    void Update(){
+        
+        if (menuButton.activeInHierarchy){
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            
+        }
+    }
     public void GoToMenu()
     {
         Debug.Log("Back to Menu");
